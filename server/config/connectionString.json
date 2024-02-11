@@ -1,0 +1,5 @@
+{
+    "Mongo_URI": "mongodb+srv://vlaescucezar123:T7QCKw346otkroPd@cleandatabase.syri1rm.mongodb.net/?retryWrites=true&w=majority",
+    "PORT": 3000,
+    "URL": "https://find-cleaner-services.app/"
+}
