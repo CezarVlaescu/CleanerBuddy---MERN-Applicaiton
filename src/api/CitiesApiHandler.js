@@ -5,7 +5,6 @@ const fetchCities = async () => {
         const response = await fetch(`${baseUrl}/cities`, { method: "GET" });
         if(response.status !== 200) throw new Error("Error fetching cities")
         const data = await response.json();
-        console.log(data);
         return data;
     }
     catch(err){

@@ -3,9 +3,8 @@ import TextField from '@mui/material/TextField';
 import Autocomplete from '@mui/material/Autocomplete';
 import { fetchCities } from '../api/CitiesApiHandler';
 
-const SearchBox = () => {
+const SearchBox = ({ inputValue, setInputValue, setSelectedCity }) => {
   const [cities, setCities] = useState([]);
-  const [inputValue, setInputValue] = useState('');
 
   useEffect(() => {
     const getCities = async () => {
@@ -24,22 +23,16 @@ const SearchBox = () => {
     <Autocomplete
       sx={{ width: 500 }}
       freeSolo
-      options={cities.map((city) => city.name)} 
+      options={cities.map((city) => city.name)}
       value={inputValue}
       onChange={(event, newValue) => {
-        setInputValue(newValue);
+        setSelectedCity(typeof newValue === 'string' ? newValue : newValue.name);
       }}
       onInputChange={(event, newInputValue) => {
         setInputValue(newInputValue);
       }}
       renderInput={(params) => (
-        <TextField
-          {...params}
-          label="Search for a city..."
-          InputProps={{
-            ...params.InputProps,
-          }}
-        />
+        <TextField {...params} label="Search for a city..." />
       )}
     />
   );
