@@ -1,8 +1,10 @@
 import './styles/App.css';
+import SearchBox from './components/SearchBox';
 
 function App() {
-  return (<>
-  </>);
+  return (
+      <SearchBox />
+  );
 }
 
 export default App;
