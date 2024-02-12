@@ -1,4 +1,8 @@
 import React, { useState, useEffect } from 'react';
+import Card from '@mui/material/Card';
+import CardActionArea from '@mui/material/CardActionArea';
+import CardContent from '@mui/material/CardContent';
+import Typography from '@mui/material/Typography';
 import { getCompanies } from '../api/CompaniesApiHandler';
 
 const CompanyList = ({selectedCity, onSelectCompany}) => {
@@ -12,7 +16,6 @@ const CompanyList = ({selectedCity, onSelectCompany}) => {
             setLoading(true);
             try{
                 const data = await getCompanies();
-                console.log(data);
                 setCompanies(data)
             }
             catch(err){
@@ -48,20 +51,34 @@ const CompanyList = ({selectedCity, onSelectCompany}) => {
     const filteredAndSortedCompanies = sortCompanies(filteredCompanies, sortKey);
 
     return (
-        <div>
+      <div>
         <select onChange={(e) => setSortKey(e.target.value)} value={sortKey}>
           <option value="name">Name</option>
           <option value="address">Location</option>
           <option value="rating">Rating</option>
         </select>
         {filteredAndSortedCompanies.map((company) => (
-          <div key={company._id} onClick={() => onSelectCompany(company._id)}>
-            <h2>{company.name}</h2>
-            <p>Address: {company.address}</p>
-            <p>Contact: {company.phone}</p>
-            <p>Rating: {company.rating} / 5</p>
-            <p>City: {company.city?.name}</p>
-          </div>
+          <Card key={company._id} sx={{ mb: 2 }}>
+            <CardActionArea onClick={() => onSelectCompany(company._id)}>
+              <CardContent>
+                <Typography gutterBottom variant="h5" component="div">
+                  {company.name}
+                </Typography>
+                <Typography variant="body2" color="text.secondary">
+                  Address: {company.address}
+                </Typography>
+                <Typography variant="body2">
+                  Contact: {company.phone}
+                </Typography>
+                <Typography variant="body2">
+                  Rating: {company.rating} / 5
+                </Typography>
+                <Typography variant="body2">
+                  City: {company.city?.name}
+                </Typography>
+              </CardContent>
+            </CardActionArea>
+          </Card>
         ))}
       </div>
     );

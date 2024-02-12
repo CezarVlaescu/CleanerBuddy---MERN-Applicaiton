@@ -21,7 +21,7 @@ const SearchBox = ({ inputValue, setInputValue, setSelectedCity }) => {
 
   return (
     <Autocomplete
-      sx={{ width: 500 }}
+      sx={{ width: 600 }}
       freeSolo
       options={cities.map((city) => city.name)}
       value={inputValue}

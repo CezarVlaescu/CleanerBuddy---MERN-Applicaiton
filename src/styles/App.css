@@ -1,0 +1,58 @@
+.app-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+  }
+  
+  .search-container {
+    padding: 16px;
+  }
+  
+  .company-container {
+    display: flex;
+    flex: 1; /* Take remaining space after the search bar */
+  }
+  
+  .company-list {
+    width: 35%; /* Take up 35% of the horizontal space */
+    overflow-y: auto; /* Add scroll if content overflows */
+    padding: 16px;
+    border-right: 1px solid #ddd; /* Separates list from map */
+  }
+  
+  .company-details-container {
+    width: 35%; /* Take up 35% of the horizontal space */
+    padding: 16px;
+    border-right: 1px solid #ddd; /* Separates details from map */
+  }
+  
+  .map-view {
+    flex-grow: 1; /* Take remaining horizontal space */
+    /* Map-specific styles here */
+  }
+  
+  /* Add some margin to the bottom of each company box in the list */
+  .company-box {
+    margin-bottom: 10px;
+  }
+  
+  /* Style the back button */
+  .back-button {
+    padding: 10px 20px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    /* Add more button styling as needed */
+  }
+  
+  
+  /* Responsive design for smaller screens */
+  @media (max-width: 768px) {
+    .company-container {
+      flex-direction: column; /* Stack list and map on small screens */
+    }
+  
+    .map-view {
+      order: -1; /* Show map above the list on small screens */
+    }
+  }
+  
