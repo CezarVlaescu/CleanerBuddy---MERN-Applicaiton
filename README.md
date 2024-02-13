@@ -11,8 +11,6 @@ CleanerBuddy is a user-friendly MERN stack application designed to connect indiv
 
 - **Sorting Options**: Users can sort the list of companies by name, location, or rating to find what best suits their needs.
 
-- **Direct Contact**: The application provides a simple way for users to get in touch with cleaning companies, streamlining the process of scheduling a cleaning service.
-
 - **Responsive Design**: CleanerBuddy is fully responsive and designed to work on devices of all sizes, ensuring a seamless experience on mobile phones, tablets, and desktops.
 
 - **Leaflet Maps Integration**: CleanerBuddy utilizes the Leaflet lib for accurate location search and autocomplete features, enhancing the user experience by providing reliable and precise information.
