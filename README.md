@@ -40,4 +40,5 @@ To get a local copy up and running, follow these simple steps.
 - **Install NPM packages for the client** : cd ../UI, npm install
 - **Enjoy**
 
-  https://github.com/CezarVlaescu/CleanerBuddy---MERN-Applicaiton/blob/main/project.png
+![project](https://github.com/CezarVlaescu/CleanerBuddy---MERN-Applicaiton/assets/108024461/87f58dac-ffb8-4a6c-99d6-b0e59ea63c8b)
+
