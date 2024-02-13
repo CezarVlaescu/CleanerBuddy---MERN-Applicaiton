@@ -39,3 +39,5 @@ To get a local copy up and running, follow these simple steps.
 - **Install NPM packages for the server** : cd Server, npm install
 - **Install NPM packages for the client** : cd ../UI, npm install
 - **Enjoy**
+
+  https://github.com/CezarVlaescu/CleanerBuddy---MERN-Applicaiton/blob/main/project.png
