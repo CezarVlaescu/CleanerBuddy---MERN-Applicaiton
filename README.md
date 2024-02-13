@@ -37,7 +37,7 @@ To get a local copy up and running, follow these simple steps.
 
 ## Installation
 
-- **Clone the repo** : git clone https://github.com/your_username_/CleanerBuddy.git
+- **Clone the repo** : git clone https://github.com/yCezarVlaescu/CleanerBuddy.git
 - **Install NPM packages for the server** : cd Server, npm install
 - **Install NPM packages for the client** : cd ../UI, npm install
-- **Enter your environment variables in config/.json** : "Mongo_URI": your_uri
+- **Enjoy**
