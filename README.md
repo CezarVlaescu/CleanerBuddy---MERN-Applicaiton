@@ -15,7 +15,7 @@ CleanerBuddy is a user-friendly MERN stack application designed to connect indiv
 
 - **Responsive Design**: CleanerBuddy is fully responsive and designed to work on devices of all sizes, ensuring a seamless experience on mobile phones, tablets, and desktops.
 
-- **Google Places API Integration**: CleanerBuddy utilizes the Google Places API for accurate location search and autocomplete features, enhancing the user experience by providing reliable and precise information.
+- **Leaflet Maps Integration**: CleanerBuddy utilizes the Leaflet lib for accurate location search and autocomplete features, enhancing the user experience by providing reliable and precise information.
 
 ## Tech Stack
 
