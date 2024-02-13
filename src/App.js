@@ -37,7 +37,7 @@ function App() {
   return (
     <div className='app-container'>
       <div className='search-container'>
-        <SearchBox inputValue={inputValue} setInputValue={setInputValue} setSelectedCity={setSelectedCity} />
+        <SearchBox inputValue={inputValue} setInputValue={setInputValue} setSelectedCity={setSelectedCity} disabled={!!selectedCompanyId} />
       </div>
       <div className='company-container'>
         {selectedCompanyId ? (
@@ -51,7 +51,7 @@ function App() {
           </div>
         )}
         <div className='map-view'>
-          <Map companyAdd={companyAddress} />
+          <Map companyAdd={companyAddress}/>
         </div>
       </div>
     </div>
