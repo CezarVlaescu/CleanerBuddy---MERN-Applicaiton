@@ -11,11 +11,9 @@ CleanerBuddy is a user-friendly MERN stack application designed to connect indiv
 
 - **Sorting Options**: Users can sort the list of companies by name, location, or rating to find what best suits their needs.
 
-- **Direct Contact**: The application provides a simple way for users to get in touch with cleaning companies, streamlining the process of scheduling a cleaning service.
-
 - **Responsive Design**: CleanerBuddy is fully responsive and designed to work on devices of all sizes, ensuring a seamless experience on mobile phones, tablets, and desktops.
 
-- **Google Places API Integration**: CleanerBuddy utilizes the Google Places API for accurate location search and autocomplete features, enhancing the user experience by providing reliable and precise information.
+- **Leaflet Maps Integration**: CleanerBuddy utilizes the Leaflet lib for accurate location search and autocomplete features, enhancing the user experience by providing reliable and precise information.
 
 ## Tech Stack
 
@@ -37,7 +35,10 @@ To get a local copy up and running, follow these simple steps.
 
 ## Installation
 
-- **Clone the repo** : git clone https://github.com/your_username_/CleanerBuddy.git
+- **Clone the repo** : git clone https://github.com/yCezarVlaescu/CleanerBuddy.git
 - **Install NPM packages for the server** : cd Server, npm install
 - **Install NPM packages for the client** : cd ../UI, npm install
-- **Enter your environment variables in config/.json** : "Mongo_URI": your_uri
+- **Enjoy**
+
+![project](https://github.com/CezarVlaescu/CleanerBuddy---MERN-Applicaiton/assets/108024461/87f58dac-ffb8-4a6c-99d6-b0e59ea63c8b)
+

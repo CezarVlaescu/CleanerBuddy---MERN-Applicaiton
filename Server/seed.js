@@ -1,4 +1,4 @@
-const getConnection = require('./config/connectionString.json');
+const getConnection = require('./config/config.json');
 const mongo_URI = getConnection.Mongo_URI;
 
 const data = require('./json/datas.json');
