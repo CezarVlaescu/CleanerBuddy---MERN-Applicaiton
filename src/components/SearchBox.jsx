@@ -1,23 +1,13 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import TextField from '@mui/material/TextField';
 import Autocomplete from '@mui/material/Autocomplete';
-import { fetchCities } from '../api/CitiesApiHandler';
+import useGetCities from '../hooks/useGetCities';
 
 const SearchBox = ({ inputValue, setInputValue, setSelectedCity, disabled }) => {
-  const [cities, setCities] = useState([]);
+  const { cities, isLoading, error } = useGetCities();
 
-  useEffect(() => {
-    const getCities = async () => {
-      try {
-        const citiesData = await fetchCities();
-        setCities(citiesData);
-      } catch (err) {
-        console.error("Failed fetching cities", err);
-      }
-    };
-
-    getCities();
-  }, []);
+  if (isLoading) return <p>Loading cities...</p>;
+  if (error) return <p>Error fetching cities: {error}</p>;
 
   const handleOnChange = (value) => {
     if(typeof value === 'string'){

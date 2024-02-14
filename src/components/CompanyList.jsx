@@ -4,28 +4,14 @@ import CardActionArea from "@mui/material/CardActionArea";
 import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
-import { getCompanies } from "../api/CompaniesApiHandler";
+import { sortCompanies } from "../utils/sortUtil";
+import useGetCompanies from "../hooks/useGetCompanies";
 
 const CompanyList = ({ selectedCity, onSelectCompany }) => {
-  const [companies, setCompanies] = useState([]);
-  const [filteredCompanies, setFilteredCompanies] = useState([]);
-  const [loading, setLoading] = useState(false);
-  const [sortKey, setSortKey] = useState("name");
 
-  useEffect(() => {
-    const getCommpanies = async () => {
-      setLoading(true);
-      try {
-        const data = await getCompanies();
-        setCompanies(data);
-      } catch (err) {
-        console.error("Error getting companies", err);
-      } finally {
-        setLoading(false);
-      }
-    };
-    getCommpanies();
-  }, []);
+  const { companies, isLoading, error } = useGetCompanies();
+  const [filteredCompanies, setFilteredCompanies] = useState([]);
+  const [sortKey, setSortKey] = useState("name");
 
   useEffect(() => {
     if (selectedCity) {
@@ -38,18 +24,10 @@ const CompanyList = ({ selectedCity, onSelectCompany }) => {
     }
   }, [selectedCity, companies]);
 
-  if (loading) return <p>Loading companies...</p>;
-
-  const sortCompanies = (companies, sortKey) => {
-    return companies.slice().sort((a, b) => {
-      if (sortKey === "rating") {
-        return b[sortKey] - a[sortKey];
-      }
-      return a[sortKey].localeCompare(b[sortKey]);
-    });
-  };
-
   const filteredAndSortedCompanies = sortCompanies(filteredCompanies, sortKey);
+
+  if (isLoading) return <div>Loading...</div>;
+  if (error) return <div>Error: {error}</div>;
 
   return (
     <div>

@@ -1,33 +1,20 @@
-import React, {useEffect, useMemo} from 'react';
+import React, {useEffect} from 'react';
 import { MapContainer, TileLayer, useMap } from 'react-leaflet';
 import { OpenStreetMapProvider } from 'leaflet-geosearch';
 import L from 'leaflet'
 import 'leaflet/dist/leaflet.css';
+import AddressGeneratorUtil from '../utils/AddressGeneratorUtil';
 
 const SearchControl = ({ companyAdd }) => {
-   
-  const englishCities = useMemo(() => [
-    {
-      "București" : "Bucharest",
-      "Iași" : "Iasi",
-      "Timișoara" : "Timisoara",
-      "Brașov" : "Brasov",
-      "Constanța" : "Constanta",
-      "Galați" : "Galati",
-    }
-  ], [])
 
   const map = useMap();
+
   useEffect(() => {
     if (companyAdd) {
-
-      const parts = companyAdd.split(',');
-      const cityName = parts.length > 1 ? parts[1].trim() : '';
-      const searchCityName = englishCities[cityName] || cityName;
-      const searchQuery = `${searchCityName}, Romania`;
-
+      const search = AddressGeneratorUtil(companyAdd);
       const provider = new OpenStreetMapProvider();
-      provider.search({ query: searchQuery }).then((results) => {
+
+      provider.search({ query: search }).then((results) => {
         if (results.length > 0) {
           const { x, y } = results[0];
           map.setView([y, x], 16); 
@@ -35,7 +22,7 @@ const SearchControl = ({ companyAdd }) => {
         }
       });
     }
-  }, [map, companyAdd, englishCities]);
+  }, [map, companyAdd]);
 
   return null;
 };
